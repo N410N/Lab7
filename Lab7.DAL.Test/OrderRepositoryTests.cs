@@ -16,12 +16,12 @@ namespace Lab7.DAL.Test
         {
             // Arrange
             var Orders = new List<Order>
-            {
-                new Order { Id = 1, AdminId = 10, Status = "In progress" },
-                new Order { Id = 2, AdminId = 10, Status = "Completed" },
-                new Order { Id = 3, AdminId = 10, Status = "In progress" },
-                new Order { Id = 4, AdminId = 20, Status = "In progress" }
-            }.AsQueryable();
+                {
+                    new Order(1, 10, DateTime.Now, null, "In progress", null),
+                    new Order(2, 10, DateTime.Now, null, "Completed", null),
+                    new Order(3, 10, DateTime.Now, null, "In progress", null),
+                    new Order(4, 20, DateTime.Now, null, "In progress", null)
+                }.AsQueryable();
 
             var mockDbSet = CreateMockDbSet(Orders);
 
@@ -44,10 +44,10 @@ namespace Lab7.DAL.Test
         {
             // Arrange
             var Orders = new List<Order>
-            {
-                new Order { Id = 1, AdminId = 10, Status = "Completed" },
-                new Order { Id = 2, AdminId = 10, Status = "Pending" }
-            }.AsQueryable();
+                {
+                    new Order(1, 10, DateTime.Now, null, "Completed", null),
+                    new Order(2, 10, DateTime.Now, null, "Pending", null)
+                }.AsQueryable();
 
             var mockDbSet = CreateMockDbSet(Orders);
 
@@ -69,10 +69,10 @@ namespace Lab7.DAL.Test
         {
             // Arrange
             var Orders = new List<Order>
-            {
-                new Order { Id = 1, AdminId = 20, Status = "In progress" },
-                new Order { Id = 2, AdminId = 30, Status = "Completed" }
-            }.AsQueryable();
+                {
+                    new Order(1, 20, DateTime.Now, null, "In progress", null),
+                    new Order(2, 30, DateTime.Now, null, "Completed", null)
+                }.AsQueryable();
 
             var mockDbSet = CreateMockDbSet(Orders);
 
@@ -94,12 +94,12 @@ namespace Lab7.DAL.Test
         {
             // Arrange
             var Orders = new List<Order>
-            {
-                new Order { Id = 1, AdminId = 10, Status = "Completed" },
-                new Order { Id = 2, AdminId = 10, Status = "Pending" },
-                new Order { Id = 3, AdminId = 10, Status = "In progress" },
-                new Order { Id = 4, AdminId = 10, Status = "In progress" }
-            }.AsQueryable();
+                {
+                    new Order(1, 10, DateTime.Now, null, "Completed", null),
+                    new Order(2, 10, DateTime.Now, null, "Pending", null),
+                    new Order(3, 10, DateTime.Now, null, "In progress", null),
+                    new Order(4, 10, DateTime.Now, null, "In progress", null)
+                }.AsQueryable();
 
             var mockDbSet = CreateMockDbSet(Orders);
 

@@ -8,6 +8,15 @@ namespace Lab7.DAL.EF.Entities
 {
     public class Order
     {
+        public Order(int id, int adminId, DateTime createdDate, string? orderDescription, string? status, string? customerFeedback)
+        {
+            Id = id;
+            AdminId = adminId;
+            CreatedDate = createdDate;
+            OrderDescription = orderDescription;
+            Status = status;
+            CustomerFeedback = customerFeedback;
+        }
 
         public int Id { get; set; }
         public int AdminId { get; set; }

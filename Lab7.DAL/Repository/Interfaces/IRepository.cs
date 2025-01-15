@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Lab7.DAL.Repository.Interfaces
 {
+    /// Загальний інтерфейс репозиторію для роботи з сутностями.
+
     public interface IRepository<T>
         where T : class
     {
-        public IEnumerable<T> Get();
+        /// Отримує всі сутності з репозиторію.
+        IEnumerable<T> Get();
+
+        /// Отримує сутність за її унікальним ідентифікатором.
+        /// <returns>Сутність або null, якщо не знайдено.</returns>
         T GetById(int id);
-        void Create(T entity, string createBody = null);
-        void Update(T entity, string modifieBody = null);
+
+        /// Створює нову сутність у репозиторії.
+        void Create(T entity);
+
+        /// Оновлює наявну сутність у репозиторії.
+        void Update(T entity);
+
+        /// Видаляє сутність із репозиторію за її ідентифікатором.
         void Delete(int id);
     }
 }
